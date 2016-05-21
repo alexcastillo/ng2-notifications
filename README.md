@@ -122,6 +122,8 @@ This event is unlikely, but in order to attach a callback to the notification er
 
 [See Browser Support](http://caniuse.com/#feat=notifications)
 
+It is important to know if you’re browsing in incognito mode in Google Chrome, you won’t get notifications.
+
 ## License
 
 The MIT License ([MIT](/LICENSE))
