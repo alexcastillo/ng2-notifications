@@ -136,6 +136,12 @@ This event is unlikely, but in order to attach a callback to the notification er
 
 [See Browser Support](http://caniuse.com/#feat=notifications)
 
+The folowing options are either in recommendation state or have no browser support currently.
+
+* [Sticky](https://developer.mozilla.org/en-US/docs/Web/API/notification/sticky)
+* [Renotify](https://developer.mozilla.org/en-US/docs/Web/API/notification/renotify)
+* [Noscreen](https://developer.mozilla.org/en-US/docs/Web/API/notification/noscreen)
+
 It is important to know if you’re browsing in incognito mode in Google Chrome, you won’t get notifications.
 
 ## License
