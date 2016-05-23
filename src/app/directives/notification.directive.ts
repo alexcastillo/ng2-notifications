@@ -28,6 +28,7 @@ export class SystemNotificationDirective implements OnInit, OnChanges, OnDestroy
   @Input() public renotify: boolean = false;
   @Input() public sticky: boolean = false;
   @Input() public vibrate: Array<number>;
+  @Input() public noscreen: boolean = false;
   @Input() public silent: boolean = true;
   @Input() public closeDelay: number = 0;
 
@@ -70,7 +71,8 @@ export class SystemNotificationDirective implements OnInit, OnChanges, OnDestroy
       sound: this.sound,
       renotify: this.renotify,
       sticky: this.sticky,
-      vibrate: this.vibrate
+      vibrate: this.vibrate,
+      noscreen: this.noscreen
     });
 
     this.attachEventHandlers(notification);
