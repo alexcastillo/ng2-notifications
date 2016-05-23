@@ -25,9 +25,9 @@ import { SystemNotificationDirective } from 'ng2-notifications';
   selector: 'my-app',
   template: `
   <systemNotification 
-    [title]="'ng2-notifications'"
-    [body]="'Directive for Native System Notifications'"
-    [icon]="'https://goo.gl/3eqeiE'">
+    title="ng2-notifications"
+    body="Directive for Native System Notifications"
+    icon="https://goo.gl/3eqeiE">
   </systemNotification>
   `,
   directives: [SystemNotificationDirective]
@@ -36,14 +36,24 @@ import { SystemNotificationDirective } from 'ng2-notifications';
 
 ## Usage
 
-Example of a basic notification with a title, a description and an icon.
+Example of a basic notification using literals for title, description and icon.
 Please note this notification will not close by itself.
 
 ``` html
 <systemNotification 
-  [title]="'ng2-notifications'"
-  [body]="'Directive for Native System Notifications'"
-  [icon]="'https://goo.gl/3eqeiE'">
+  title="ng2-notifications"
+  body="Directive for Native System Notifications"
+  icon="https://goo.gl/3eqeiE">
+</systemNotification>
+```
+
+For data binding use:
+
+``` html
+<systemNotification 
+  [title]="notification.title"
+  [body]="notification.description"
+  [icon]="notification.icon">
 </systemNotification>
 ```
 
@@ -54,7 +64,7 @@ To self-close after a period of time, just add the `[closeDelay]` attribute with
 ``` html
 <systemNotification 
   ...
-  [closeDelay]="5000">
+  closeDelay="5000">
 </systemNotification>
 ```
 
@@ -65,32 +75,32 @@ Notifications can be silent or feature a custom sound.
 ``` html
 <systemNotification 
   ...
-  [silent]="true">
+  silent="true">
 </systemNotification>
 ```
 
 ``` html
 <systemNotification 
   ...
-  [sound]="'./url/to/custom/sound.mp3'">
+  sound="./url/to/custom/sound.mp3">
 </systemNotification>
 ```
 
 ### Controlling when to fire a notification
 
 It is possible to control when a notification is shown. 
-Simply use an expression that evaluates to a boolean.
+Simply bind a boolean expression to the `[when]` attribute.
 
 ``` html
 <systemNotification 
   ...
-  [when]="myExpression">
+  [when]="booleanExpression">
 </systemNotification>
 ```
 
 ### Click Event
 
-To attach a click event handler to a notification, add the `(onClick)` event.
+To attach a click handler to a notification, add the `(onClick)` event.
 
 ``` html
 <systemNotification 
