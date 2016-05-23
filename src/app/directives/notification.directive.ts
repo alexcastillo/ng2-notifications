@@ -21,6 +21,7 @@ export class SystemNotificationDirective implements OnInit, OnChanges, OnDestroy
   @Input() public body: string;
   @Input() public icon: string;
   @Input() public sound: string;
+  @Input() public data: any;
   @Input() public dir: string = 'auto';
   @Input() public lang: string = 'en-US';
   @Input() public renotify: boolean = false;
@@ -58,6 +59,7 @@ export class SystemNotificationDirective implements OnInit, OnChanges, OnDestroy
     let notification = new Notification(this.title, {
       dir: this.dir,
       lang: this.lang,
+      data: this.data,
       body: this.body,
       icon: this.icon,
       silent: this.silent,
