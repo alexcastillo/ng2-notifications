@@ -22,6 +22,7 @@ export class SystemNotificationDirective implements OnInit, OnChanges, OnDestroy
   @Input() public icon: string;
   @Input() public sound: string;
   @Input() public data: any;
+  @Input() public tag: string;
   @Input() public dir: string = 'auto';
   @Input() public lang: string = 'en-US';
   @Input() public renotify: boolean = false;
@@ -60,6 +61,7 @@ export class SystemNotificationDirective implements OnInit, OnChanges, OnDestroy
       dir: this.dir,
       lang: this.lang,
       data: this.data,
+      tag: this.tag,
       body: this.body,
       icon: this.icon,
       silent: this.silent,
