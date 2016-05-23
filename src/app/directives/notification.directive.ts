@@ -21,6 +21,7 @@ export class SystemNotificationDirective implements OnInit, OnChanges, OnDestroy
   @Input() public body: string;
   @Input() public icon: string;
   @Input() public sound: string;
+  @Input() public renotify: boolean = false;
   @Input() public silent: boolean = true;
   @Input() public closeDelay: number = 0;
 
@@ -56,7 +57,8 @@ export class SystemNotificationDirective implements OnInit, OnChanges, OnDestroy
       body: this.body,
       icon: this.icon,
       silent: this.silent,
-      sound: this.sound
+      sound: this.sound,
+      renotify: this.renotify
     });
 
     this.attachEventHandlers(notification);
