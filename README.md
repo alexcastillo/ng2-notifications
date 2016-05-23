@@ -68,24 +68,6 @@ To self-close after a period of time, just add the `[closeDelay]` attribute with
 </systemNotification>
 ```
 
-### Sound
-
-Notifications can be silent or feature a custom sound.
-
-``` html
-<systemNotification 
-  ...
-  silent="true">
-</systemNotification>
-```
-
-``` html
-<systemNotification 
-  ...
-  sound="./url/to/custom/sound.mp3">
-</systemNotification>
-```
-
 ### Controlling when to fire a notification
 
 It is possible to control when a notification is shown. 
@@ -132,14 +114,24 @@ This event is unlikely, but in order to attach a callback to the notification er
 </systemNotification>
 ```
 
+## Other Options
+
+* data
+* tag
+* dir: (default: 'auto')
+* lang: (default: 'en-US')
+
 ## Browser Support
 
 [See Browser Support](http://caniuse.com/#feat=notifications)
 
 The folowing options are either in recommendation state or have no browser support currently.
 
-* [Sticky](https://developer.mozilla.org/en-US/docs/Web/API/notification/sticky)
 * [Renotify](https://developer.mozilla.org/en-US/docs/Web/API/notification/renotify)
+* [Silent](https://developer.mozilla.org/en-US/docs/Web/API/notification/silent)
+* [Sound](https://developer.mozilla.org/en-US/docs/Web/API/notification/silent)
+* [Vibrate](https://developer.mozilla.org/en-US/docs/Web/API/notification/vibrate)
+* [Sticky](https://developer.mozilla.org/en-US/docs/Web/API/notification/sticky)
 * [Noscreen](https://developer.mozilla.org/en-US/docs/Web/API/notification/noscreen)
 
 It is important to know if you’re browsing in incognito mode in Google Chrome, you won’t get notifications.
