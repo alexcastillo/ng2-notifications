@@ -4,7 +4,9 @@
 
 > The Notifications API allows web pages to control the display of system notifications to the end user — these are outside the top-level browsing context viewport, so therefore can be displayed even the user has switched tabs or moved to a different app. The API is designed to be compatible with existing notification systems across different platforms.
 
-[Read More](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
+[Read More about the API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
+
+[Read the blog post](https://medium.com/@castillo.io/native-web-push-notifications-with-angular-2-c774a72c009e)
 
 ## Demo
 
