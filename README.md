@@ -73,18 +73,20 @@ To self-close after a period of time, just add the `[closeDelay]` attribute with
 ### Controlling when to fire a notification
 
 It is possible to control when a notification is shown. 
-Simply bind a boolean expression to the `[when]` attribute.
+Simply add a template variable and call the `.show()` method on the variable on any event.
 
 ``` html
-<push-notification 
+<push-notification #notification
   ...
-  [when]="booleanExpression">
+  (load)="notification.show()">
 </push-notification>
 ```
 
+In this case, the load event will fire when the component is ready (`ngOnInit`).
+
 ### Click Event
 
-To attach a click handler to a notification, add the `(onClick)` event.
+To attach a click handler to a notification, add the `(action)` event.
 
 ``` html
 <push-notification 
@@ -100,20 +102,20 @@ It is possible to listen for show/close events to fire and attach a callback.
 ``` html
 <push-notification 
   ...
-  (onShow)="myShowFunction($event)"
-  (onClose)="mycloseFunction($event)">
+  (show)="myShowFunction($event)"
+  (close)="mycloseFunction($event)">
 </push-notification>
 ```
 
 ### Error Event
 
-This event is unlikely, but in order to attach a callback to the notification error event, simply use the `(onError)` event.
+This event is unlikely, but in order to attach a callback to the notification error event, simply use the `(error)` event.
 
 ``` html
 <push-notification 
   ...
-  (onError)="handleError($event)">
-</pushNotification>
+  (error)="handleError($event)">
+</push-notification>
 ```
 
 ## Other Options

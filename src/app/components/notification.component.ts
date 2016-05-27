@@ -33,10 +33,11 @@ export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
   @Input() public silent: boolean = true;
   @Input() public closeDelay: number = 0;
 
-  @Output() public onShow: EventEmitter<any> = new EventEmitter();
-  @Output() public onClose: EventEmitter<any> = new EventEmitter();
-  @Output() public onError: EventEmitter<any> = new EventEmitter();
-  @Output() public onClick: EventEmitter<any> = new EventEmitter();
+  @Output('load') public onLoad: EventEmitter<any> = new EventEmitter();
+  @Output('show') public onShow: EventEmitter<any> = new EventEmitter();
+  @Output('close') public onClose: EventEmitter<any> = new EventEmitter();
+  @Output('error') public onError: EventEmitter<any> = new EventEmitter();
+  @Output('action') public onClick: EventEmitter<any> = new EventEmitter();
 
   public checkCompatibility () {
     return !!('Notification' in window);
@@ -115,6 +116,7 @@ export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   public ngOnInit (): void {
+    this.onLoad.emit({});
   }
 
   public ngOnDestroy (): void {
