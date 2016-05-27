@@ -1,10 +1,10 @@
 // for standard export at bottom
-import { PushNotificationDirective } from './src/app/directives/notification.directive';
+import { PushNotificationComponent } from './src/app/components/notification.component';
 
 // for manual imports
-export * from './src/app/directives/notification.directive';
+export * from './src/app/components/notification.component';
 
 // provides standard for consumption via things like angular-cli
 export default {
-  directives: [PushNotificationDirective]
+  directives: [PushNotificationComponent]
 }

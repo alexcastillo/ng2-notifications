@@ -1,5 +1,5 @@
 import {
-  Directive,
+  Component,
   EventEmitter,
   OnInit,
   OnChanges,
@@ -10,13 +10,14 @@ import {
 
 declare var Notification;
 
-@Directive({
-  selector: 'pushNotification'
+@Component({
+  selector: 'push-notification',
+  styles: [':host { display: none; }'],
+  template: ''
 })
 
-export class PushNotificationDirective implements OnInit, OnChanges, OnDestroy {
+export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
 
-  @Input() public when: boolean;
   @Input() public title: string;
   @Input() public body: string;
   @Input() public icon: string;
@@ -49,7 +50,7 @@ export class PushNotificationDirective implements OnInit, OnChanges, OnDestroy {
     return Notification.requestPermission();
   }
 
-  public notify () {
+  public show () {
     if (!this.checkCompatibility()) {
         return console.log('Notification API not available in this browser.');
     }
@@ -86,6 +87,8 @@ export class PushNotificationDirective implements OnInit, OnChanges, OnDestroy {
       setTimeout(() => {
         notification.close();
       }, this.closeDelay);
+    } else {
+      notification.close();
     }
   }
 
@@ -112,9 +115,6 @@ export class PushNotificationDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   public ngOnInit (): void {
-    if (this.when === undefined) {
-      this.notify();
-    }
   }
 
   public ngOnDestroy (): void {
@@ -122,9 +122,6 @@ export class PushNotificationDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   public ngOnChanges(): void {
-    if (this.when) {
-      this.notify();
-    }
   }
 
 }
