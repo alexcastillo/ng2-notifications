@@ -10,6 +10,6 @@ import {
 
 import { TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
-import { SystemNotificationDirective } from './notification.directive';
+import { PushNotificationDirective } from './notification.directive';
 
 // @TODO: Add tests

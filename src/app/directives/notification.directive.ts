@@ -11,10 +11,10 @@ import {
 declare var Notification;
 
 @Directive({
-  selector: 'systemNotification'
+  selector: 'pushNotification'
 })
 
-export class SystemNotificationDirective implements OnInit, OnChanges, OnDestroy {
+export class PushNotificationDirective implements OnInit, OnChanges, OnDestroy {
 
   @Input() public when: boolean;
   @Input() public title: string;

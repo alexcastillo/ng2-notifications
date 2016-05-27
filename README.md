@@ -1,4 +1,4 @@
-# Angular 2 System Notifications
+# Angular 2 Push Notifications
 
 [![](./src/public/img/demo.gif)]()
 
@@ -21,18 +21,18 @@ $ npm install ng2-notifications --save
 Then add it to your app:
 
 ``` ts
-import { SystemNotificationDirective } from 'ng2-notifications';
+import { PushNotificationDirective } from 'ng2-notifications';
 
 @Component({
   selector: 'my-app',
   template: `
-  <systemNotification 
+  <pushNotification 
     title="ng2-notifications"
-    body="Directive for Native System Notifications"
+    body="Directive for Native Push Notifications"
     icon="https://goo.gl/3eqeiE">
-  </systemNotification>
+  </pushNotification>
   `,
-  directives: [SystemNotificationDirective]
+  directives: [PushNotificationDirective]
 })
 ```
 
@@ -42,21 +42,21 @@ Example of a basic notification using literals for title, description and icon.
 Please note this notification will not close by itself.
 
 ``` html
-<systemNotification 
+<pushNotification 
   title="ng2-notifications"
-  body="Directive for Native System Notifications"
+  body="Directive for Native Push Notifications"
   icon="https://goo.gl/3eqeiE">
-</systemNotification>
+</pushNotification>
 ```
 
 For data binding use:
 
 ``` html
-<systemNotification 
+<pushNotification 
   [title]="notification.title"
   [body]="notification.description"
   [icon]="notification.icon">
-</systemNotification>
+</pushNotification>
 ```
 
 ### Self-closing
@@ -64,10 +64,10 @@ For data binding use:
 To self-close after a period of time, just add the `[closeDelay]` attribute with a value of milliseconds. The example below will self-close in 5 seconds.
 
 ``` html
-<systemNotification 
+<pushNotification 
   ...
   closeDelay="5000">
-</systemNotification>
+</pushNotification>
 ```
 
 ### Controlling when to fire a notification
@@ -76,10 +76,10 @@ It is possible to control when a notification is shown.
 Simply bind a boolean expression to the `[when]` attribute.
 
 ``` html
-<systemNotification 
+<pushNotification 
   ...
   [when]="booleanExpression">
-</systemNotification>
+</pushNotification>
 ```
 
 ### Click Event
@@ -87,10 +87,10 @@ Simply bind a boolean expression to the `[when]` attribute.
 To attach a click handler to a notification, add the `(onClick)` event.
 
 ``` html
-<systemNotification 
+<pushNotification 
   ...
   (onClick)="myFunction($event)">
-</systemNotification>
+</pushNotification>
 ```
 
 ### Show and Close events
@@ -98,11 +98,11 @@ To attach a click handler to a notification, add the `(onClick)` event.
 It is possible to listen for show/close events to fire and attach a callback.
 
 ``` html
-<systemNotification 
+<pushNotification 
   ...
   (onShow)="myShowFunction($event)"
   (onClose)="mycloseFunction($event)">
-</systemNotification>
+</pushNotification>
 ```
 
 ### Error Event
@@ -110,10 +110,10 @@ It is possible to listen for show/close events to fire and attach a callback.
 This event is unlikely, but in order to attach a callback to the notification error event, simply use the `(onError)` event.
 
 ``` html
-<systemNotification 
+<pushNotification 
   ...
   (onError)="handleError($event)">
-</systemNotification>
+</pushNotification>
 ```
 
 ## Other Options
