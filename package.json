@@ -1,6 +1,6 @@
 {
   "name": "ng2-notifications",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Angular 2 Component for Native System Notifications",
   "repository": {
     "url": "https://github.com/alexcastillo/ng2-notifications"
