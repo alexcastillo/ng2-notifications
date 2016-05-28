@@ -6,7 +6,7 @@
 
 [Read More about the API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
 
-[Read the blog post](https://medium.com/@castillo.io/native-web-push-notifications-with-angular-2-c774a72c009e)
+[Read the blog post](http://www.castillo.io/blog/2016/4/14/push-notifications-with-angular-2)
 
 ## Demo
 
