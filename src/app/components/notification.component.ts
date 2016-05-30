@@ -47,8 +47,8 @@ export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
     return permission === 'granted';
   }
 
-  public requestPermission () {
-    return Notification.requestPermission();
+  public requestPermission (callback) {
+    return Notification.requestPermission(callback);
   }
 
   public show () {
@@ -56,9 +56,11 @@ export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
         return console.log('Notification API not available in this browser.');
     }
 
-    return this.requestPermission()
-      .then((permission) => this.isPermissionGranted(permission))
-      .then(() => this.create());
+    return this.requestPermission((permission) => {
+      if (this.isPermissionGranted(permission)) {
+        this.create();
+      }
+    });
   }
 
   public create () {
