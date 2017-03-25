@@ -39,6 +39,8 @@ export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
   @Output('error') public onError: EventEmitter<any> = new EventEmitter();
   @Output('action') public onClick: EventEmitter<any> = new EventEmitter();
 
+  private instances: Notification[] = [];
+
   public checkCompatibility () {
     return !!('Notification' in window);
   }
@@ -79,6 +81,7 @@ export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
       noscreen: this.noscreen
     });
 
+    this.instances.push(notification);
     this.attachEventHandlers(notification);
     this.close(notification);
 
@@ -96,7 +99,8 @@ export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   public closeAll (): void {
-    Notification.close();
+    this.instances.map(notification => this.close(notification));
+    this.instances = [];
   }
 
   attachEventHandlers (notification): void {
