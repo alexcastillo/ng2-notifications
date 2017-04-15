@@ -144,7 +144,7 @@ It is important to know if you’re browsing in incognito mode in Google Chrome,
 
 The MIT License ([MIT](/LICENSE))
 
-Copyright (c) 2016 Alex Castillo
+Copyright (c) 2017 Alex Castillo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
