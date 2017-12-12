@@ -21,7 +21,7 @@ $ npm install ng2-notifications --save
 Then add it to your app:
 
 ``` ts
-import { PushNotificationComponent } from 'ng2-notifications';
+import { PushNotificationComponent } from 'ng2-notifications/ng2-notifications';
 
 @Component({
   selector: 'my-app',
